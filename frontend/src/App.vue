@@ -17,9 +17,7 @@
         </ul>
       </section>
       <section class="secondary-navigation">
-        <span class="user-avatar">
-          <a href="#">S</a>
-        </span>
+        <Avatar :initials='avatarInitial'/>
       </section>
     </nav>
     <div class="hero-content">
@@ -33,16 +31,10 @@
       </p>
       <ul class="controls">
         <li>
-          <button class="primary-action">
-            <FontAwesomeIcon icon="play" />
-            <span>Drink</span>
-          </button>
+          <HeroPlay />
         </li>
         <li>
-          <button class="secondary-action">
-            <FontAwesomeIcon icon="info-circle" />
-            <span>More Info</span>
-          </button>
+          <HeroInfo />
         </li>
       </ul>
     </div>
@@ -169,12 +161,21 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import Avatar from '@/components/Avatar.vue';
+import HeroPlay from '@/components/HeroPlay.vue';
+import HeroInfo from '@/components/HeroInfo.vue';
 
 export default {
   name: 'App',
   components: {
-    FontAwesomeIcon,
+    Avatar,
+    HeroPlay,
+    HeroInfo,
+  },
+  computed: {
+    avatarInitial() {
+      return 'J';
+    },
   },
 };
 </script>
